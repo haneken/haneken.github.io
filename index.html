@@ -28,7 +28,7 @@
       width: 100%;
       padding: 20px;
       margin-bottom: 20px;
-      background-color: #FF5733; /* オレンジ */
+      background-color: #19b132; /* オレンジ */
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       color: #fff;
@@ -45,14 +45,35 @@
       padding: 1em;
       position: fixed;
       bottom: 0;
-      width: 100%;
+      right: 0;
+      width: 10%;
     }
+
+    .blinking{
+	-webkit-animation:blink 1.5s ease-in-out infinite alternate;
+    -moz-animation:blink 1.5s ease-in-out infinite alternate;
+    animation:blink 1.5s ease-in-out infinite alternate;
+    }
+    @-webkit-keyframes blink{
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
+    @-moz-keyframes blink{
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
+    @keyframes blink{
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
+
+
   </style>
 </head>
 <body>
 
   <header>
-    <h1>うわぁぁぁぁぁぁぁぁぁ！！！！！！く、苦しぃぃぃぃ！！！！</h1>
+    <h1><span class="blinking">うわぁぁぁぁぁぁぁぁぁ！！！！！！く、苦しぃぃぃぃ！！！！</span></h1>
   </header>
 
   <section>
@@ -67,8 +88,34 @@
     </div>
   </section>
 
+  <section>
+    <div class="colorful-box">
+      <h2>セクション1</h2>
+      <p>ここにセクション1の内容を追加します。</p>
+    </div>
+
+    <div class="colorful-box">
+      <h2>セクション2</h2>
+      <p>ここにセクション2の内容を追加します。</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="colorful-box">
+      <h2>セクション1</h2>
+      <p>ここにセクション1の内容を追加します。</p>
+    </div>
+
+    <div class="colorful-box">
+      <h2>セクション2</h2>
+      <p>ここにセクション2の内容を追加します。</p>
+    </div>
+  </section>
+
+  
+
   <footer>
-    <p>&copy; 2024 派手なサイト. All Rights Reserved.</p>
+    <p>&copy; super hyper haneken 2024</p>
   </footer>
 
 </body>
