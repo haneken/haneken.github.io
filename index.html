@@ -9,8 +9,8 @@
     body {
       background-color: #f0f0f0;
       font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
+      padding: 1em;
+      /*margin: 20px;*/
     }
 
     header {
@@ -18,6 +18,8 @@
       color: white;
       text-align: center;
       padding: 1em;
+      margin: 20px;
+      border-radius: 10px; /*角丸め*/
     }
 
     section {
@@ -25,17 +27,55 @@
     }
 
     .colorful-box {
-      width: 100%;
+      width: auto;
       padding: 20px;
       margin-bottom: 20px;
       background-color: #19b132; /* オレンジ */
-      border-radius: 10px;
+      border-radius: 10px; /*角丸め*/
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       color: #fff;
     }
 
-    .colorful-box h2 {
-      margin-bottom: 10px;
+    .colorful-box2 {
+      width: auto;
+      padding-left: 0px;
+      padding-bottom: 0px;
+
+      margin-right: 20px;
+      margin-left: 20px;
+      margin-bottom: 2px;
+      background-color: rgba(255, 255, 255, 0);
+      border-bottom-style: solid;
+      border-bottom-width: 3px;
+      border-bottom-color:#df6513;
+      border-radius: 0px; /*角丸め*/
+      color: #df6513;
+    }
+
+    .colorful-line {
+      width: auto;
+      padding: 5px;
+      margin-left: 0px;
+      margin-right: 20px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      background-color: #df6513; 
+      border-radius: 0px; /*角丸め*/
+      color: #df6513;
+    }
+
+    .textbox1 {
+      width: auto;
+      padding: 20px;
+
+      margin-top: 20px;
+      margin-right: 20px;
+      margin-left: 20px;
+      margin-bottom: 20px;
+
+      background-color: #19b132a2; /* オレンジ */
+      border-radius: 10px; /*角丸め*/
+      color: #000000;
     }
 
     footer {
@@ -47,12 +87,13 @@
       bottom: 0;
       right: 0;
       width: 10%;
+      border-radius: 10px;
     }
 
     .blinking{
-	-webkit-animation:blink 1.5s ease-in-out infinite alternate;
-    -moz-animation:blink 1.5s ease-in-out infinite alternate;
-    animation:blink 1.5s ease-in-out infinite alternate;
+	-webkit-animation:blink 0.1s ease-in-out infinite alternate;
+    -moz-animation:blink 0.1s ease-in-out infinite alternate;
+    animation:blink 0.3s ease-in-out infinite alternate;/*blink間隔*/
     }
     @-webkit-keyframes blink{
         0% {opacity:0;}
@@ -76,41 +117,31 @@
     <h1><span class="blinking">うわぁぁぁぁぁぁぁぁぁ！！！！！！く、苦しぃぃぃぃ！！！！</span></h1>
   </header>
 
-  <section>
-    <div class="colorful-box">
-      <h2>セクション1</h2>
-      <p>ここにセクション1の内容を追加します。</p>
+    <div align="center">
+        <section>
+            <div class="colorful-box">
+            <h2>セクション1</h2>
+            <p>ここにセクション1の内容を追加します。</p>
+            </div>
+
+            <div class="colorful-box">
+            <h2>セクション2</h2>
+            <p>ここにセクション2の内容を追加します。</p>
+            </div>
+        </section>
     </div>
 
-    <div class="colorful-box">
-      <h2>セクション2</h2>
-      <p>ここにセクション2の内容を追加します。</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="colorful-box">
-      <h2>セクション1</h2>
-      <p>ここにセクション1の内容を追加します。</p>
+    <div align="left">
+        <div class="colorful-box2">
+            <h1><span class="colorful-line"></span>&nbsp;Profile</h1>
+        </div>
     </div>
 
-    <div class="colorful-box">
-      <h2>セクション2</h2>
-      <p>ここにセクション2の内容を追加します。</p>
+    <div align="center">
+        <div class="textbox1">
+            <p>ほげほげ書く</p>
+        </div>
     </div>
-  </section>
-
-  <section>
-    <div class="colorful-box">
-      <h2>セクション1</h2>
-      <p>ここにセクション1の内容を追加します。</p>
-    </div>
-
-    <div class="colorful-box">
-      <h2>セクション2</h2>
-      <p>ここにセクション2の内容を追加します。</p>
-    </div>
-  </section>
 
   
 
