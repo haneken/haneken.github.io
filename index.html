@@ -9,15 +9,16 @@
   <link rel="apple-touch-icon" sizes="180x180" href="images/haneken_icon.png">
   <style>
     body {
-      background-color: #f0f0f0;
+      background-color: #ffffff;
       font-family: 'Arial', sans-serif;
       /*margin: 20px;*/
     }
 
     .inbody{
-      background-color: #f0f0f0;
+      background-color: #ffffff;
       font-family: 'Arial', sans-serif;
       padding: 5em;
+      padding-top: 0px;
       /*margin: 20px;*/
     }
 
@@ -274,7 +275,7 @@
     }
 
     .blinking{
-	-webkit-animation:blink 0.1s ease-in-out infinite alternate;
+	  -webkit-animation:blink 0.1s ease-in-out infinite alternate;
     -moz-animation:blink 0.1s ease-in-out infinite alternate;
     animation:blink 0.3s ease-in-out infinite alternate;/*blink間隔*/
     }
@@ -296,6 +297,46 @@
         margin: auto;
     }
 
+    /* 左から */
+
+    .fadeLeft{
+    animation-name:fadeLeftAnime;
+    animation-duration:2.0s;
+    animation-fill-mode:forwards;
+    opacity:0;
+    }
+
+    @keyframes fadeLeftAnime{
+      from {
+        opacity: 0;
+      transform: translateX(-200px);
+      }
+
+      to {
+        opacity: 1;
+      transform: translateX(0);
+      }
+    }
+
+    .fadeRight{
+    animation-name:fadeRightAnime;
+    animation-duration:2.0s;
+    animation-fill-mode:forwards;
+    opacity:0;
+    }
+
+    @keyframes fadeRightAnime{
+      from {
+        opacity: 0;
+      transform: translateX(200px);
+      }
+
+      to {
+        opacity: 1;
+      transform: translateX(0);
+      }
+    }
+
 
   </style>
 </head>
@@ -306,68 +347,81 @@
       <h1><span class="blinking">うわぁぁぁぁぁぁぁぁぁ！！！！！！く、苦しぃぃぃぃ！！！！</span></h1>
     </header>
 
-    <div align="left">
-        <div class="orange-title-box">
-            <span class="orange-line"></span>
-            <span>&nbsp;Profile</span>
-        </div>
-    </div>
+    <div class="fadeLeft">
+      <div align="left">
+          <div class="orange-title-box">
+              <span class="orange-line"></span>
+              <span>&nbsp;Profile</span>
+          </div>
+      </div>
 
-    <div align="left">
-        <div class="orange-textbox">
-            <ul class="kazyou1">
-                <li>名前 : 羽根田 賢和 (Kento Haneda)</li>
-                <li>生年月日 : 2001/04/17</li>
-                <li>所属 : 東北大学工学部電気情報物理工学科 坂口・乾・徳久研究室</li>
-                <li>研究分野 : 自然言語処理</li>
-                
-            </ul>
-        </div>
-    </div>
-
-    <div align="right">
-        <div class="blue-title-box">
-            
-            <span>&nbsp;Publications</span>
-            <span class="blue-line"></span>
-        </div>
-    </div>
-
-    <div align="center">
-        <div class="blue-textbox">
-            <p>Coming soon!</p>
-        </div>
-    </div>
-
-    <div align="left">
-        <div class="pink-title-box">
-            <span class="pink-line"></span>
-            <span>&nbsp;Conference</span>
-        </div>
-    </div>
-
-    <div align="center">
-        <div class="pink-textbox">
-          <p>Coming soon!</p>
-        </div>
-    </div>
-
-    <div align="right">
-      <div class="green-title-box">
-          
-          <span>&nbsp;Contact</span>
-          <span class="green-line"></span>
+      <div align="left">
+          <div class="orange-textbox">
+              <ul class="kazyou1">
+                  <li>名前 : 羽根田 賢和 (Kento Haneda)</li>
+                  <li>生年月日 : 2001/04/17</li>
+                  <li>所属 : 東北大学工学部電気情報物理工学科 坂口・乾・徳久研究室</li>
+                  <li>研究分野 : 自然言語処理</li>
+                  
+              </ul>
+          </div>
       </div>
     </div>
 
-    <div align="left">
-      <div class="green-textbox">
-          <ul class="kazyou1">
-            <li>e-mail : haneda.kento.t6@dc.tohoku.ac.jp</li>
-            <li>Twitter(新X) : @haneken_nlp <a href="https://twitter.com/haneken_nlp" class="image-button"><img src="images/twix.png" alt="Twitter", height="30px"></a></li>
-            <li>GitHub : haneken <a href="https://github.com/haneken" class="image-button"><img src="images/github-mark.png" alt="GitHub", height="30px"></a></li>
+
+    <div class="fadeRight">
+      <div align="right">
+          <div class="blue-title-box">
+              
+              <span>&nbsp;Publications</span>
+              <span class="blue-line"></span>
+          </div>
+      </div>
+
+      <div align="center">
+          <div class="blue-textbox">
+              <p>Coming soon!</p>
+          </div>
+      </div>
+    
+    </div>
+
+
+    <div class="fadeLeftTrigger">
+      <div align="left">
+          <div class="pink-title-box">
+              <span class="pink-line"></span>
+              <span>&nbsp;Conference</span>
+          </div>
+      </div>
+
+      <div align="center">
+          <div class="pink-textbox">
+            <p>Coming soon!</p>
+          </div>
+      </div>
+
+    </div>
+
+
+    <div class="fadeRightTrigger">
+      <div align="right">
+        <div class="green-title-box">
             
-          </ul>
+            <span>&nbsp;Contact</span>
+            <span class="green-line"></span>
+        </div>
+      </div>
+
+      <div align="left">
+        <div class="green-textbox">
+            <ul class="kazyou1">
+              <li>e-mail : haneda.kento.t6@dc.tohoku.ac.jp</li>
+              <li>Twitter(新X) : @haneken_nlp <a href="https://twitter.com/haneken_nlp" class="image-button"><img src="images/twix.png" alt="Twitter", height="30px"></a></li>
+              <li>GitHub : haneken <a href="https://github.com/haneken" class="image-button"><img src="images/github-mark.png" alt="GitHub", height="30px"></a></li>
+              
+            </ul>
+        </div>
       </div>
     </div>
 
@@ -380,6 +434,9 @@
 
 
 
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="js/fade_anime.js"></script>
 
 </body>
 </html>
