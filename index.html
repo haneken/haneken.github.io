@@ -5,11 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>うわぁぁぁぁぁぁぁぁぁ！！！！！！く、苦しぃぃぃぃ！！！！</title>
+  <link rel="icon" type="image/png" href="images/haneken_icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/haneken_icon.png">
   <style>
     body {
       background-color: #f0f0f0;
       font-family: 'Arial', sans-serif;
-      padding: 1em;
+      /*margin: 20px;*/
+    }
+
+    .inbody{
+      background-color: #f0f0f0;
+      font-family: 'Arial', sans-serif;
+      padding: 5em;
       /*margin: 20px;*/
     }
 
@@ -45,7 +53,7 @@
       margin-right: 20px;
       margin-left: 20px;
       margin-bottom: 2px;
-      margin-top: 0px;
+      margin-top: 30px;
       background-color: rgba(255, 255, 255, 0);
       border-bottom-style: solid;
       border-bottom-width: 5px;
@@ -84,7 +92,7 @@
       color: #f9703e;
 
       font-size: 30px;
-      font-family: 'Meyrio','Hiragino Sans W3','Arial';
+      font-family: '游ゴシック','Hiragino Sans W6','Arial';
       font-weight: bold;
     }
 
@@ -98,7 +106,7 @@
       margin-right: 20px;
       margin-left: 20px;
       margin-bottom: 2px;
-      margin-top: 0px;
+      margin-top: 30px;
       background-color: rgba(255, 255, 255, 0);
       border-bottom-style: solid;
       border-bottom-width: 5px;
@@ -137,7 +145,7 @@
       color: #3e9ff9;
 
       font-size: 30px;
-      font-family: 'Meyrio','Hiragino Sans W3','Arial';
+      font-family: '游ゴシック','Hiragino Sans W6','Arial';
       font-weight: bold;
     }
 
@@ -150,7 +158,7 @@
       margin-right: 20px;
       margin-left: 20px;
       margin-bottom: 2px;
-      margin-top: 0px;
+      margin-top: 30px;
       background-color: rgba(255, 255, 255, 0);
       border-bottom-style: solid;
       border-bottom-width: 5px;
@@ -189,20 +197,80 @@
       color: #f63ef9;
 
       font-size: 30px;
-      font-family: 'Meyrio','Hiragino Sans W3','Arial';
+      font-family: '游ゴシック','Hiragino Sans W6','Arial';
       font-weight: bold;
+    }
+
+
+    .green-title-box {
+      width: auto;
+      padding-left: 0px;
+      padding-bottom: 12px;
+      padding-top: 0px;
+
+      margin-right: 20px;
+      margin-left: 20px;
+      margin-bottom: 2px;
+      margin-top: 30px;
+      background-color: rgba(255, 255, 255, 0);
+      border-bottom-style: solid;
+      border-bottom-width: 5px;
+      border-bottom-color:#59bc4c;
+      border-radius: 0px; /*角丸め*/
+      color: #59bc4c;
+
+      font-size: 48px;
+      font-family: 'Arial Black','Seravek',"Impact";
+      font-weight: normal;
+    }
+
+    .green-line {
+      width: auto;
+      padding: 5px;
+      margin-left: 20px;
+      margin-right: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      background-color: #59bc4c; 
+      border-radius: 0px; /*角丸め*/
+      color: #59bc4c;
+    }
+
+    .green-textbox {
+      width: auto;
+      padding: 10px;
+
+      margin-top: 20px;
+      margin-right: 20px;
+      margin-left: 20px;
+      margin-bottom: 20px;
+
+      background-color: #8efaa463; /* オレンジ */
+      border-radius: 10px; /*角丸め*/
+      color: #408937;
+
+      font-size: 30px;
+      font-family: '游ゴシック','Hiragino Sans W6','Arial';
+      font-weight: bold;
+    }
+
+    .image-button{
+    display: inline-block;
+    }
+    .img-button2{
+    display: block;
     }
 
     footer {
       background-color: #333;
       color: white;
       text-align: center;
-      padding: 1em;
-      position: fixed;
-      bottom: 0;
-      right: 0;
-      width: 10%;
-      border-radius: 10px;
+      padding: 0px;
+      position: absolute;
+      margin: 0px;
+      margin-left: -8px;
+      width : 100%;
+      border-radius: 0px;
     }
 
     .blinking{
@@ -232,10 +300,11 @@
   </style>
 </head>
 <body>
+  <div class="inbody">
 
-  <header>
-    <h1><span class="blinking">うわぁぁぁぁぁぁぁぁぁ！！！！！！く、苦しぃぃぃぃ！！！！</span></h1>
-  </header>
+    <header>
+      <h1><span class="blinking">うわぁぁぁぁぁぁぁぁぁ！！！！！！く、苦しぃぃぃぃ！！！！</span></h1>
+    </header>
 
     <div align="left">
         <div class="orange-title-box">
@@ -250,6 +319,7 @@
                 <li>名前 : 羽根田 賢和 (Kento Haneda)</li>
                 <li>生年月日 : 2001/04/17</li>
                 <li>所属 : 東北大学工学部電気情報物理工学科 坂口・乾・徳久研究室</li>
+                <li>研究分野 : 自然言語処理</li>
                 
             </ul>
         </div>
@@ -258,45 +328,58 @@
     <div align="right">
         <div class="blue-title-box">
             
-            <span>&nbsp;Profile</span>
+            <span>&nbsp;Publications</span>
             <span class="blue-line"></span>
         </div>
     </div>
 
-    <div align="left">
+    <div align="center">
         <div class="blue-textbox">
-            <ul class="kazyou1">
-                <li>名前 : 羽根田 賢和 (Kento Haneda)</li>
-                <li>生年月日 : 2001/04/17</li>
-                <li>所属 : 東北大学工学部電気情報物理工学科 坂口・乾・徳久研究室</li>
-                
-            </ul>
+            <p>Coming soon!</p>
         </div>
     </div>
 
     <div align="left">
         <div class="pink-title-box">
             <span class="pink-line"></span>
-            <span>&nbsp;Profile</span>
+            <span>&nbsp;Conference</span>
         </div>
+    </div>
+
+    <div align="center">
+        <div class="pink-textbox">
+          <p>Coming soon!</p>
+        </div>
+    </div>
+
+    <div align="right">
+      <div class="green-title-box">
+          
+          <span>&nbsp;Contact</span>
+          <span class="green-line"></span>
+      </div>
     </div>
 
     <div align="left">
-        <div class="pink-textbox">
-            <ul class="kazyou1">
-                <li>名前 : 羽根田 賢和 (Kento Haneda)</li>
-                <li>生年月日 : 2001/04/17</li>
-                <li>所属 : 東北大学工学部電気情報物理工学科 坂口・乾・徳久研究室</li>
-                
-            </ul>
-        </div>
+      <div class="green-textbox">
+          <ul class="kazyou1">
+            <li>e-mail : haneda.kento.t6@dc.tohoku.ac.jp</li>
+            <li>Twitter(新X) : @haneken_nlp <a href="https://twitter.com/haneken_nlp" class="image-button"><img src="images/twix.png" alt="Twitter", height="30px"></a></li>
+            <li>GitHub : haneken <a href="https://github.com/haneken" class="image-button"><img src="images/github-mark.png" alt="GitHub", height="30px"></a></li>
+            
+          </ul>
+      </div>
     </div>
 
-  
+  </div>
 
   <footer>
     <p>&copy; super hyper haneken 2024</p>
   </footer>
+
+
+
+
 
 </body>
 </html>
