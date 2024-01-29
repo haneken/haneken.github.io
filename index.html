@@ -551,13 +551,6 @@
       }
     }
 
-    .for-pc { display:block; }
-    .for-sp { display:none; }
-
-    @media only screen and (max-width : 767px){
-      .for-pc { display:none; }
-      .for-sp { display:block; }
-    }
 
     .gaming {
      /* 横長で虹色を作る */
@@ -580,6 +573,10 @@
       mask-size: auto;
       mask-repeat: no-repeat;
       mask-position: center;
+
+      width : auto;
+      height : auto;
+
     
     }
   
@@ -592,6 +589,14 @@
       linear-gradient(to right, Magenta, yellow, Cyan, Magenta) 0% center/200%;
       animation: gaming 2s linear infinite; */
       100% { background-position-x: 200%; }
+    }
+
+    .for-pc { display:block; }
+    .for-sp { display:none; }
+
+    @media only screen and (max-width : 767px){
+      .for-pc { display:none; }
+      .for-sp { display:block; }
     }
 
   </style>
