@@ -583,23 +583,17 @@
     }
   
     .twix-red{
-      background-color: rgb(183, 42, 66);
-    }
-
-    .masked {
-      width: 100px;
-      height: 100px;
-      background-color: #8cffa0;
-      -webkit-mask-image: url(images/blackcircle.png);
-      mask-image: url(images/blackcircle.png);
+      background: linear-gradient(to right, Magenta, yellow, Cyan, Magenta) 0% center/200%;
+      animation: gaming 2s linear infinite;
     }
 
     @keyframes gaming {
-      /* backgroundを移動させる
-      linear-gradient(to right, Magenta, yellow, Cyan, Magenta) 0% center/200%;
-      animation: gaming 2s linear infinite; */
+      /* backgroundを移動させる */
       100% { background-position-x: 200%; }
     }
+
+
+
 
     .for-pc { display:block; }
     .for-sp { display:none; }
