@@ -559,6 +559,40 @@
       .for-sp { display:block; }
     }
 
+    .gaming {
+     /* 横長で虹色を作る */
+     background: linear-gradient(to right, Magenta, yellow, Cyan, Magenta) 0% center/200%;
+     animation: gaming 2s linear infinite;
+    }
+    @keyframes gaming {
+      /* backgroundを移動させる */
+      100% { background-position-x: 200%; }
+    }
+  
+    .twix{
+
+      -webkit-mask-image: url("images/blackcircle.svg");
+      -webkit-mask-size: auto;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+
+      mask-image: url("images/blackcircle.svg");
+      mask-size: auto;
+      mask-repeat: no-repeat;
+      mask-position: center;
+    
+    }
+  
+    .twix-red{
+      background: rgb(183, 42, 66);
+    }
+
+    @keyframes gaming {
+      /* backgroundを移動させる
+      linear-gradient(to right, Magenta, yellow, Cyan, Magenta) 0% center/200%;
+      animation: gaming 2s linear infinite; */
+      100% { background-position-x: 200%; }
+    }
 
   </style>
 </head>
@@ -592,6 +626,10 @@
         </div>
       </div>
 
+      <span class="twix"></span>
+      <div class="twix twix-red"></div>
+      <div></div>
+
 
       <div class="fadeRight">
         <div align="right">
@@ -604,7 +642,7 @@
 
         <div align="center">
             <div class="blue-textbox">
-                <p>Coming soon!</p>
+                <p>Coming soon!<div class="twix"></div></p>
             </div>
         </div>
       
