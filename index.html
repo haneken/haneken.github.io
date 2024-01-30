@@ -23,14 +23,35 @@
       /*margin: 20px;*/
     }
 
-    header {
-      background-color: #4CAF50;
+    .header {
+      background: linear-gradient(to right, rgb(74, 82, 207), rgb(128, 199, 244), rgb(128, 244, 219)) 0% center/110%;
+      /*background: linear-gradient(to bottom, rgb(226, 108, 61), rgb(219, 152, 18), rgb(244, 207, 128)) 0% center/10%;*/
+      /*animation:  gaming 3.0s linear infinite;*/
+      /*background-color: #7b7b7b;*/
       color: white;
       text-align: center;
-      padding: 1%;
-      margin: 2%;
-      border-radius: 10px; /*角丸め*/
+      width: 100%;
+      padding-top: 5%;
+      padding-bottom: 5%;
+      height: auto;
+      margin: 0%;
+      border-radius: 0px; /*角丸め*/
+      border-bottom-style: solid;
+      border-bottom-width: 3px;
+      border-bottom-color:#adacac;
+
+      font-size: 380%;
+      font-family: 'Hiragino Sans W9','游ゴシック','Arial';
+      font-weight: bold;
+
     }
+
+    .mini{
+      font-size: 80%;
+      font-family: 'Hiragino Sans W9','游ゴシック','Arial';
+      font-weight: bold;
+    }
+    
 
     section {
       margin: 2%; /*20px->2%*/
@@ -491,7 +512,7 @@
     .blinking{
 	  -webkit-animation:blink 0.1s ease-in-out infinite alternate;
     -moz-animation:blink 0.1s ease-in-out infinite alternate;
-    animation:blink 0.3s ease-in-out infinite alternate;/*blink間隔*/
+    animation:blink 2.0s ease-in-out infinite alternate;/*blink間隔*/
     }
     @-webkit-keyframes blink{
         0% {opacity:0;}
@@ -604,6 +625,20 @@
     }
 
 
+    .gray-box{
+      background-color: #c6c2c2;
+      color: white;
+      text-align: center;
+      padding: 0.5%;
+      padding-left: 1%;
+      padding-right: 1%;
+      margin: 0px;
+      margin-bottom: 0.5%;
+      margin-left: -20%;
+      width : 125.4%;
+      border-radius: 0px;
+    }
+
 
 
     .for-pc { display:block; }
@@ -617,11 +652,23 @@
   </style>
 </head>
 <body>
-  <div class="inbody">
 
-    <header>
-      <h1><span class="blinking">うわぁぁぁぁぁぁぁぁぁ！！！！！！く、苦しぃぃぃぃ！！！！</span></h1>
-    </header>
+  <div class="for-pc">
+    <div class="header">
+      <div>羽根田賢和 / Kento Haneda</div>
+      <div class="mini">Tohoku NLP</div>
+    </div>
+  </div>
+  
+
+  <div class="for-pc">
+    <div class="header">
+      <div>羽根田賢和 / Kento Haneda</div>
+      <div class="mini">Tohoku NLP</div>
+    </div>
+  </div>
+  
+  <div class="inbody">
 
     <div class="for-pc">
 
