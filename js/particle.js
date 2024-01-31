@@ -3,16 +3,16 @@ particlesJS("snow_particlesjs", {
     "particles": {
       //シェイプの設定
       "number": {
-        "value": 150, //シェイプの数
+        "value": 80, //シェイプの数
         "density": {
           "enable": true, //シェイプの密集度の設定許可
-          "value_area": 800 //シェイプの密集度
+          "value_area": 2500 //シェイプの密集度
         }
       },
       "shape": {
         "type": "image", //circle、edge、triangle、polygon、star、image から選べる
         "image": {
-          "src": "images/twix.png", //雪の画像を設定する ※相対パスでも可
+          "src": "images/alphabets2.png", //雪の画像を設定する ※相対パスでも可
         }
       },
       "color":{
@@ -20,7 +20,7 @@ particlesJS("snow_particlesjs", {
       },
 
       "opacity": {
-        "value": 0.7, //透明度
+        "value": 0.6, //透明度
         "random": false, //透明度ランダムの許可
         "anim": {
           "enable": false, //透明度のアニメーションさせるかどうか
@@ -30,10 +30,10 @@ particlesJS("snow_particlesjs", {
         }
       },
       "size": {
-        "value": 8, //シェイプの大きさ
+        "value": 60, //シェイプの大きさ
         "random": true, //大きさランダムの許可
         "anim": {
-          "enable": false, //大きさアニメーションさせるかどうか
+          "enable": true, //大きさアニメーションさせるかどうか
           "speed": 20, //スピード
           "size_min": 0.1, //スピードの最小値
           "sync": false //同時にアニメーションさせるかどうか
@@ -46,7 +46,7 @@ particlesJS("snow_particlesjs", {
       // 動きの設定
       "move": {
         "enable": true, //シェイプの動かすかどうか
-        "speed": 2, //スピード
+        "speed": 0.8, //スピード
         "direction": "bottom", //シェイプの動く方向(none、top、top-right、right、bottom-right、bottom、bottom-left、left、top-left から選べる)
         "random": true, // 動きはランダム
         "straight": false, // 動きをとどめない
@@ -54,8 +54,8 @@ particlesJS("snow_particlesjs", {
         "bounce": false, //跳ね返りなし
         "attract": {
           "enable": true,
-          "rotateX": 300,
-          "rotateY": 1200
+          "rotateX": 30,
+          "rotateY": 30
         }
       }
     },
