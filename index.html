@@ -1,926 +1,425 @@
-
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Kento Haneda / 羽根田賢和</title>
+
   <link rel="icon" type="image/x-icon" href="images/haneken_icon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="images/haneken_icon_apple.png">
+
   <style>
+    /* ========================================
+       Base
+    ======================================== */
+
+    :root {
+      --text: #222;
+      --subtext: #666;
+      --border: #e5e5e5;
+      --background: #ffffff;
+
+      --orange: #df6513;
+      --blue: #2991f3;
+      --pink: #d946d8;
+      --green: #59a84f;
+
+      --content-width: 900px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background-color: #ffffff;
-      font-family: 'Arial', sans-serif;
-      /*margin: 20px;*/
-
-      height: 100%;
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        "Hiragino Sans",
+        "Yu Gothic",
+        YuGothic,
+        Arial,
+        sans-serif;
+      line-height: 1.8;
     }
 
-    #snow_particlesjs{ 
-	    position:fixed;/*描画固定*/
-	    z-index:-1;/*描画を一番下に*/
-	    width: 100%;
-	    height: 100%;
-	    background-color:#ffffff;/*背景色*/
+    a {
+      color: inherit;
     }
 
-    #tsparticles{ 
-	    position:fixed;/*描画固定*/
-	    z-index:-1;/*描画を一番下に*/
-	    width: 100%;
-	    height: 100%;
-	    background-color:#ffffff;/*背景色*/
+    img {
+      max-width: 100%;
     }
 
-    #wrapper{
-      position: relative;/*描画を#particles-jsよりも上にするためposition:relative;を指定*/
-      z-index: 1;/*z-indexの数字を大きくすることで描画を#particles-jsよりも上に*/
-      width:100%;
-      height: 100%;
+
+    /* ========================================
+       Header
+    ======================================== */
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 64px 24px 52px;
     }
 
-    .inbody{
-      background-color: #ffffff00;
-      font-family: 'Arial', sans-serif;
-      padding: 6%;
-      padding-top: 0%;
-      /*margin: 20px;*/
+    .header-inner {
+      width: min(var(--content-width), 100%);
+      margin: 0 auto;
     }
 
-    .header {
-      background: linear-gradient(to right, rgb(74, 82, 207), rgb(128, 199, 244), rgb(128, 244, 219)) 0% center/110%;
-      /*background: linear-gradient(to bottom, rgb(226, 108, 61), rgb(219, 152, 18), rgb(244, 207, 128)) 0% center/10%;*/
-      /*animation:  gaming 3.0s linear infinite;*/
-      /*background-color: #7b7b7b;*/
-      color: white;
-      text-align: center;
-      width: 100%;
-      padding-top: 5%;
-      padding-bottom: 5%;
-      height: auto;
-      margin: 0%;
-      border-radius: 0px; /*角丸め*/
-      border-bottom-style: solid;
-      border-bottom-width: 3px;
-      border-bottom-color:#adacac;
-
-      font-size: 380%;
-      font-family: 'Hiragino Sans W9','游ゴシック','Arial';
-      font-weight: bold;
-
+    .site-name {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0.02em;
     }
 
-    .mini{
-      font-size: 80%;
-      font-family: 'Hiragino Sans W9','游ゴシック','Arial';
-      font-weight: bold;
-    }
-    
-    .header-sp {
-      background: linear-gradient(to right, rgb(74, 82, 207), rgb(128, 199, 244), rgb(128, 244, 219)) 0% center/110%;
-      /*background: linear-gradient(to bottom, rgb(226, 108, 61), rgb(219, 152, 18), rgb(244, 207, 128)) 0% center/10%;*/
-      /*animation:  gaming 3.0s linear infinite;*/
-      /*background-color: #7b7b7b;*/
-      color: white;
-      text-align: center;
-      width: 100%;
-      padding-top: 5%;
-      padding-bottom: 5%;
-      height: auto;
-      margin: 0%;
-      border-radius: 0px; /*角丸め*/
-      border-bottom-style: solid;
-      border-bottom-width: 2px;
-      border-bottom-color:#adacac;
-
-      font-size: 175%;
-      font-family: 'Hiragino Sans W9','游ゴシック','Arial';
-      font-weight: bold;
-
+    .site-subtitle {
+      margin: 12px 0 0;
+      color: var(--subtext);
+      font-size: 1rem;
+      letter-spacing: 0.08em;
     }
 
-    .mini-sp{
-      font-size: 75%;
-      font-family: 'Hiragino Sans W9','游ゴシック','Arial';
-      font-weight: bold;
+
+    /* ========================================
+       Main
+    ======================================== */
+
+    main {
+      width: min(var(--content-width), calc(100% - 48px));
+      margin: 0 auto;
+      padding: 32px 0 80px;
     }
 
     section {
-      margin: 2%; /*20px->2%*/
+      margin: 0;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    .colorful-box {
-      width: auto;
-      padding: 2%;
-      margin-bottom: 2%;
-      background-color: #19b132; /* オレンジ */
-      border-radius: 10px; /*角丸め*/
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      color: #fff;
-    }
-    /*PC用*/
-    .orange-title-box{
-      width: auto;
-      padding-left: 0%;
-      padding-bottom: 12px; /*線とタイトルの隙間*/
-      padding-top: 0%;
-
-      margin-right: 2%;
-      margin-left: 2%;
-      margin-bottom: 2%;
-      margin-top: 3%;
-      background-color: rgba(255, 255, 255, 0);
-      border-bottom-style: solid;
-      border-bottom-width: 5px;
-      border-bottom-color:#df6513;
-      border-radius: 0px; /*角丸め*/
-      color: #df6513;
-
-      font-size: 280%; /*スマホ用にフォントサイズの調整*/
-      font-family: 'Arial Black','Seravek',"Impact";
-      font-weight: normal;
-    }
-
-    .orange-line{
-      width: auto;
-      padding: 5px;
-      margin-left: 0%;
-      margin-right: 2%;
-      margin-top: 0%;
-      margin-bottom: 1%;
-      background-color: #df6513; 
-      border-radius: 0px; /*角丸め*/
-      color: #df6513;
-    }
-
-    .orange-textbox{
-      width: auto;
-      padding: 1%;
-
-      margin-top: 2%;
-      margin-right: 2%;
-      margin-left: 2%;
-      margin-bottom: 2%;
-
-      background-color: #fac48e63; /* オレンジ */
-      border-radius: 10px; /*角丸め*/
-      color: #f9703e;
-
-      font-size: 180%; /*スマホ用にフォントサイズの調整*/
-      font-family: '游ゴシック','Hiragino Sans W6','Arial';
-      font-weight: bold;
+    section:last-child {
+      border-bottom: none;
     }
 
 
-    .blue-title-box{
-      width: auto;
-      padding-left: 0%;
-      padding-bottom: 12px; /*線とタイトルの隙間*/
-      padding-top: 0%;
+    /* ========================================
+       Section title
+    ======================================== */
 
-      margin-right: 2%;
-      margin-left: 2%;
-      margin-bottom: 2%;
-      margin-top: 3%;
-      background-color: rgba(255, 255, 255, 0);
-      border-bottom-style: solid;
-      border-bottom-width: 5px;
-      border-bottom-color:#2991f3;
-      border-radius: 0px; /*角丸め*/
-      color: #2991f3;
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
 
-      font-size: 280%;
-      font-family: 'Arial Black','Seravek',"Impact";
-      font-weight: normal;
+      margin: 0 0 28px;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      line-height: 1.3;
+      font-weight: 700;
     }
 
-    .blue-line{
-      width: auto;
-      padding: 5px;
-      margin-left: 2%;
-      margin-right: 0%;
-      margin-top: 0%;
-      margin-bottom: 1%;
-      background-color: #2991f3; 
-      border-radius: 0px; /*角丸め*/
-      color: #2991f3;
+    .section-title::before {
+      content: "";
+      display: block;
+      width: 5px;
+      height: 1.4em;
+      border-radius: 3px;
+      background: var(--section-color);
     }
 
-    .blue-textbox{
-      width: auto;
-      padding: 1%;
-
-      margin-top: 2%;
-      margin-right: 2%;
-      margin-left: 2%;
-      margin-bottom: 2%;
-
-      background-color: #8ee4fa63; /* オレンジ */
-      border-radius: 10px; /*角丸め*/
-      color: #3e9ff9;
-
-      font-size: 180%;
-      font-family: '游ゴシック','Hiragino Sans W6','Arial';
-      font-weight: bold;
+    .section-profile {
+      --section-color: var(--orange);
     }
 
-    .pink-title-box{
-      width: auto;
-      padding-left: 0%;
-      padding-bottom: 12px; /*線とタイトルの隙間*/
-      padding-top: 0%;
-
-      margin-right: 2%;
-      margin-left: 2%;
-      margin-bottom: 2%;
-      margin-top: 3%;
-      background-color: rgba(255, 255, 255, 0);
-      border-bottom-style: solid;
-      border-bottom-width: 5px;
-      border-bottom-color:#f329ec;
-      border-radius: 0px; /*角丸め*/
-      color: #f329ec;
-
-      font-size: 280%;
-      font-family: 'Arial Black','Seravek',"Impact";
-      font-weight: normal;
+    .section-publications {
+      --section-color: var(--blue);
     }
 
-    .pink-line{
-      width: auto;
-      padding: 5px;
-      margin-left: 0%;
-      margin-right: 2%;
-      margin-top: 0%;
-      margin-bottom: 1%;
-      background-color: #f329ec; 
-      border-radius: 0px; /*角丸め*/
-      color: #f329ec;
+    .section-conference {
+      --section-color: var(--pink);
     }
 
-    .pink-textbox{
-      width: auto;
-      padding: 1%;
-
-      margin-top: 2%;
-      margin-right: 2%;
-      margin-left: 2%;
-      margin-bottom: 2%;
-
-      background-color: #f68efa63; /* オレンジ */
-      border-radius: 10px; /*角丸め*/
-      color: #f63ef9;
-
-      font-size: 180%;
-      font-family: '游ゴシック','Hiragino Sans W6','Arial';
-      font-weight: bold;
+    .section-contact {
+      --section-color: var(--green);
     }
 
 
-    .green-title-box{
-      width: auto;
-      padding-left: 0%;
-      padding-bottom: 12px; /*線とタイトルの隙間*/
-      padding-top: 0%;
+    /* ========================================
+       Content
+    ======================================== */
 
-      margin-right: 2%;
-      margin-left: 2%;
-      margin-bottom: 2%;
-      margin-top: 3%;
-      background-color: rgba(255, 255, 255, 0);
-      border-bottom-style: solid;
-      border-bottom-width: 5px;
-      border-bottom-color:#59bc4c;
-      border-radius: 0px; /*角丸め*/
-      color: #59bc4c;
-
-      font-size: 280%;
-      font-family: 'Arial Black','Seravek',"Impact";
-      font-weight: normal;
+    .content {
+      margin-left: 19px;
+      color: #333;
     }
 
-    .green-line{
-      width: auto;
-      padding: 5px;
-      margin-left: 2%;
-      margin-right: 0%;
-      margin-top: 0%;
-      margin-bottom: 1%;
-      background-color: #59bc4c; 
-      border-radius: 0px; /*角丸め*/
-      color: #59bc4c;
+    .content ul {
+      margin: 0;
+      padding-left: 1.5em;
     }
 
-    .green-textbox{
-      width: auto;
-      padding: 1%;
-
-      margin-top: 2%;
-      margin-right: 2%;
-      margin-left: 2%;
-      margin-bottom: 0.6%;
-
-      background-color: #8efaa463; /* オレンジ */
-      border-radius: 10px; /*角丸め*/
-      color: #408937;
-
-      font-size: 180%;
-      font-family: '游ゴシック','Hiragino Sans W6','Arial';
-      font-weight: bold;
-    }
-    /*ここまで*/
-    
-    /*スマホ用*/
-    .orange-title-box-sp {
-      width: auto;
-      padding-left: 0%;
-      padding-bottom: 12px; /*線とタイトルの隙間*/
-      padding-top: 0%;
-
-      margin-right: 2%;
-      margin-left: 2%;
-      margin-bottom: 2%;
-      margin-top: 5%;
-      background-color: rgba(255, 255, 255, 0);
-      border-bottom-style: solid;
-      border-bottom-width: 5px;
-      border-bottom-color:#df6513;
-      border-radius: 0px; /*角丸め*/
-      color: #df6513;
-
-      font-size: 160%; /*スマホ用にフォントサイズの調整*/
-      font-family: 'Arial Black','Seravek',"Impact";
-      font-weight: normal;
+    .content li {
+      margin: 8px 0;
     }
 
-    .orange-line-sp {
-      width: auto;
-      padding: 0.8%;
-      margin-left: 0%;
-      margin-right: 2%;
-      margin-top: 0%;
-      margin-bottom: 1%;
-      background-color: #df6513; 
-      border-radius: 0px; /*角丸め*/
-      color: #df6513;
-    }
-
-    .orange-textbox-sp {
-      width: auto;
-      padding: 1%;
-
-      margin-top: 2%;
-      margin-right: 2%;
-      margin-left: 2%;
-      margin-bottom: 2%;
-
-      background-color: #fac48e63; /* オレンジ */
-      border-radius: 10px; /*角丸め*/
-      color: #f9703e;
-
-      font-size: 75%; /*スマホ用にフォントサイズの調整*/
-      font-family: '游ゴシック','Hiragino Sans W6','Arial';
-      font-weight: bold;
+    .content p {
+      margin: 0;
     }
 
 
-    .blue-title-box-sp {
-      width: auto;
-      padding-left: 0%;
-      padding-bottom: 12px; /*線とタイトルの隙間*/
-      padding-top: 0%;
+    /* ========================================
+       Links / icons
+    ======================================== */
 
-      margin-right: 2%;
-      margin-left: 2%;
-      margin-bottom: 2%;
-      margin-top: 5%;
-      background-color: rgba(255, 255, 255, 0);
-      border-bottom-style: solid;
-      border-bottom-width: 5px;
-      border-bottom-color:#2991f3;
-      border-radius: 0px; /*角丸め*/
-      color: #2991f3;
-
-      font-size: 160%;
-      font-family: 'Arial Black','Seravek',"Impact";
-      font-weight: normal;
+    .social-links {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: 4px;
+      vertical-align: middle;
     }
 
-    .blue-line-sp {
-      width: auto;
-      padding: 0.8%;
-      margin-left: 2%;
-      margin-right: 0%;
-      margin-top: 0%;
-      margin-bottom: 1%;
-      background-color: #2991f3; 
-      border-radius: 0px; /*角丸め*/
-      color: #2991f3;
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
     }
 
-    .blue-textbox-sp {
-      width: auto;
-      padding: 1%;
+    .x-icon {
+      width: 28px;
+      height: 28px;
 
-      margin-top: 2%;
-      margin-right: 2%;
-      margin-left: 2%;
-      margin-bottom: 2%;
+      -webkit-mask-image: url("images/twix_skelton_mini_75.png");
+      -webkit-mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: center;
 
-      background-color: #8ee4fa63; /* オレンジ */
-      border-radius: 10px; /*角丸め*/
-      color: #3e9ff9;
+      mask-image: url("images/twix_skelton_mini_75.png");
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
 
-      font-size: 75%;
-      font-family: '游ゴシック','Hiragino Sans W6','Arial';
-      font-weight: bold;
+      background-color: #111;
+
+      transition: opacity 0.2s ease;
     }
 
-    .pink-title-box-sp {
-      width: auto;
-      padding-left: 0%;
-      padding-bottom: 12px; /*線とタイトルの隙間*/
-      padding-top: 0%;
-
-      margin-right: 2%;
-      margin-left: 2%;
-      margin-bottom: 2%;
-      margin-top: 5%;
-      background-color: rgba(255, 255, 255, 0);
-      border-bottom-style: solid;
-      border-bottom-width: 5px;
-      border-bottom-color:#f329ec;
-      border-radius: 0px; /*角丸め*/
-      color: #f329ec;
-
-      font-size: 160%;
-      font-family: 'Arial Black','Seravek',"Impact";
-      font-weight: normal;
+    .github-icon {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      transition: opacity 0.2s ease;
     }
 
-    .pink-line-sp {
-      width: auto;
-      padding: 0.8%;
-      margin-left: 0%;
-      margin-right: 2%;
-      margin-top: 0%;
-      margin-bottom: 1%;
-      background-color: #f329ec; 
-      border-radius: 0px; /*角丸め*/
-      color: #f329ec;
-    }
-
-    .pink-textbox-sp {
-      width: auto;
-      padding: 1%;
-
-      margin-top: 2%;
-      margin-right: 2%;
-      margin-left: 2%;
-      margin-bottom: 2%;
-
-      background-color: #f68efa63; /* オレンジ */
-      border-radius: 10px; /*角丸め*/
-      color: #f63ef9;
-
-      font-size: 75%;
-      font-family: '游ゴシック','Hiragino Sans W6','Arial';
-      font-weight: bold;
+    .x-icon:hover,
+    .github-icon:hover {
+      opacity: 0.6;
     }
 
 
-    .green-title-box-sp {
-      width: auto;
-      padding-left: 0%;
-      padding-bottom: 12px; /*線とタイトルの隙間*/
-      padding-top: 0%;
-
-      margin-right: 2%;
-      margin-left: 2%;
-      margin-bottom: 2%;
-      margin-top: 5%;
-      background-color: rgba(255, 255, 255, 0);
-      border-bottom-style: solid;
-      border-bottom-width: 5px;
-      border-bottom-color:#59bc4c;
-      border-radius: 0px; /*角丸め*/
-      color: #59bc4c;
-
-      font-size: 160%;
-      font-family: 'Arial Black','Seravek',"Impact";
-      font-weight: normal;
-    }
-
-    .green-line-sp {
-      width: auto;
-      padding: 0.8%;
-      margin-left: 2%;
-      margin-right: 0%;
-      margin-top: 0%;
-      margin-bottom: 1%;
-      background-color: #59bc4c; 
-      border-radius: 0px; /*角丸め*/
-      color: #59bc4c;
-    }
-
-    .green-textbox-sp {
-      width: auto;
-      padding: 1%;
-
-      margin-top: 2%;
-      margin-right: 2%;
-      margin-left: 2%;
-      margin-bottom: 1%;
-
-      background-color: #8efaa463; /* オレンジ */
-      border-radius: 10px; /*角丸め*/
-      color: #408937;
-
-      font-size: 75%;
-      font-family: '游ゴシック','Hiragino Sans W6','Arial';
-      font-weight: bold;
-    }
-    /*ここまで*/
-
-    .image-button{
-    display: inline-block;
-    }
-    .img-button2{
-    display: block;
-    }
+    /* ========================================
+       Footer
+    ======================================== */
 
     footer {
-      background-color: #333;
-      color: white;
+      border-top: 1px solid var(--border);
+      padding: 24px;
       text-align: center;
-      padding: 0px;
-      position: absolute;
-      margin: 0px;
-      margin-left: -8px;
-      width : 100%;
-      border-radius: 0px;
+      color: #888;
+      font-size: 0.85rem;
     }
 
-    .blinking{
-	  -webkit-animation:blink 0.1s ease-in-out infinite alternate;
-    -moz-animation:blink 0.1s ease-in-out infinite alternate;
-    animation:blink 2.0s ease-in-out infinite alternate;/*blink間隔*/
-    }
-    @-webkit-keyframes blink{
-        0% {opacity:0;}
-        100% {opacity:1;}
-    }
-    @-moz-keyframes blink{
-        0% {opacity:0;}
-        100% {opacity:1;}
-    }
-    @keyframes blink{
-        0% {opacity:0;}
-        100% {opacity:1;}
-    }
 
-    .kazyou1{
-        width: fit-content;
-        margin: auto;
-    }
+    /* ========================================
+       Mobile
+    ======================================== */
 
-    /* 左から */
+    @media (max-width: 767px) {
 
-    .fadeLeft{
-    animation-name:fadeLeftAnime;
-    animation-duration:2.0s;
-    animation-fill-mode:forwards;
-    opacity:0;
-    }
-
-    @keyframes fadeLeftAnime{
-      from {
-        opacity: 0;
-      transform: translateX(-200px);
+      header {
+        padding: 40px 20px 32px;
       }
 
-      to {
-        opacity: 1;
-      transform: translateX(0);
-      }
-    }
-
-    .fadeRight{
-    animation-name:fadeRightAnime;
-    animation-duration:2.0s;
-    animation-fill-mode:forwards;
-    opacity:0;
-    }
-
-    @keyframes fadeRightAnime{
-      from {
-        opacity: 0;
-      transform: translateX(200px);
+      .site-name {
+        font-size: clamp(1.7rem, 8vw, 2.4rem);
       }
 
-      to {
-        opacity: 1;
-      transform: translateX(0);
+      .site-subtitle {
+        margin-top: 8px;
+        font-size: 0.85rem;
+      }
+
+      main {
+        width: calc(100% - 32px);
+        padding: 16px 0 48px;
+      }
+
+      section {
+        padding: 32px 0;
+      }
+
+      .section-title {
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+      }
+
+      .content {
+        margin-left: 14px;
+        font-size: 0.92rem;
+        line-height: 1.75;
+      }
+
+      .content ul {
+        padding-left: 1.3em;
+      }
+
+      .content li {
+        margin: 7px 0;
+      }
+
+      .x-icon,
+      .github-icon {
+        width: 22px;
+        height: 22px;
+      }
+
+      footer {
+        padding: 20px 16px;
       }
     }
-
-
-  
-    .twix{
-      width: 35px;
-      height: 35px;
-
-      -webkit-mask-image: url(images/twix_skelton_mini_75.png);
-      -webkit-mask-size: auto;
-      -webkit-mask-repeat: no-repeat;
-      -webkit-mask-position: center;
-
-      mask-image: url(images/twix_skelton_mini_75.png);
-      mask-size: auto;
-      mask-repeat: no-repeat;
-      mask-position: center;
-
-
-      background-color: rgb(49, 42, 183);
-
-    
-    }
-
-    .twix-sp{
-      width: 20px;
-      height: 20px;
-
-      -webkit-mask-image: url(images/twix_skelton_mini_45.png);
-      -webkit-mask-size: auto;
-      -webkit-mask-repeat: no-repeat;
-      -webkit-mask-position: center;
-
-      mask-image: url(images/twix_skelton_mini_45.png);
-      mask-size: auto;
-      mask-repeat: no-repeat;
-      mask-position: center;
-
-
-      background-color: rgb(49, 42, 183);
-
-    
-    }
-  
-    .twix-rainbow{
-      background: linear-gradient(to right, Magenta, yellow, Cyan, Magenta) 0% center/200%;
-      animation: gaming 0.5s linear infinite;
-    }
-
-    @keyframes gaming {
-      /* backgroundを移動させる */
-      100% { background-position-x: 200%; }
-    }
-
-
-    .gray-box{
-      background-color: #c6c2c2;
-      color: white;
-      text-align: center;
-      padding: 0.5%;
-      padding-left: 1%;
-      padding-right: 1%;
-      margin: 0px;
-      margin-bottom: 0.5%;
-      margin-left: -20%;
-      width : 125.4%;
-      border-radius: 0px;
-    }
-
-
-
-    .for-pc { display:block; }
-    .for-sp { display:none; }
-
-    @media only screen and (max-width : 767px){
-      .for-pc { display:none; }
-      .for-sp { display:block; }
-    }
-
   </style>
+
 </head>
+
 <body>
-  <div id="snow_particlesjs"></div>
-  <div id="wrapper">
 
-  <div class="for-pc">
-    <div class="header">
-      <div>羽根田賢和 / Kento Haneda</div>
-      <div class="mini">Tohoku NLP</div>
+  <!-- Header -->
+
+  <header>
+    <div class="header-inner">
+      <h1 class="site-name">羽根田賢和 / Kento Haneda</h1>
+      <p class="site-subtitle">Tohoku NLP</p>
     </div>
+  </header>
+
+  <!-- Main -->
+
+  <main>
+
+```
+<!-- Profile -->
+<section class="section-profile">
+  <h2 class="section-title">Profile</h2>
+
+  <div class="content">
+    <ul>
+      <li>名前 : 羽根田 賢和 (Kento Haneda)</li>
+      <li>生年月日 : 2001/04/17</li>
+      <li>所属 : 東北大学工学部電気情報物理工学科 坂口・乾・徳久研究室</li>
+      <li>研究分野 : 自然言語処理</li>
+    </ul>
   </div>
-  
+</section>
 
-  <div class="for-sp">
-    <div class="header-sp">
-      <div>羽根田賢和 / Kento Haneda</div>
-      <div class="mini-sp">Tohoku NLP</div>
-    </div>
+
+<!-- Publications -->
+<section class="section-publications">
+  <h2 class="section-title">Publications</h2>
+
+  <div class="content">
+    <ul>
+      <li>
+        羽根田賢和, 浦川通, 田口雄哉, 田森秀明, 坂口慶祐.<br>
+        RLHFを用いた「面白い」短歌の自動生成の試み.<br>
+        言語処理学会第30回年次大会(NLP2024)
+      </li>
+    </ul>
   </div>
-
-  <div class="inbody">
-
-
-    <div class="for-pc">
-
-      <div class="fadeLeft">
-        <div align="left">
-            <div class="orange-title-box">
-                <span class="orange-line"></span>
-                <span>&nbsp;Profile</span>
-            </div>
-        </div>
-
-        <div align="left">
-            <div class="orange-textbox">
-                <ul class="kazyou1">
-                    <li>名前 : 羽根田 賢和 (Kento Haneda)</li>
-                    <li>生年月日 : 2001/04/17</li>
-                    <li>所属 : 東北大学工学部電気情報物理工学科 坂口・乾・徳久研究室</li>
-                    <li>研究分野 : 自然言語処理</li>
-                    
-                </ul>
-            </div>
-        </div>
-      </div>
+</section>
 
 
+<!-- Conference -->
+<section class="section-conference">
+  <h2 class="section-title">Conference</h2>
 
-      <div class="fadeRight">
-        <div align="right">
-            <div class="blue-title-box">
-                
-                <span>&nbsp;Publications</span>
-                <span class="blue-line"></span>
-            </div>
-        </div>
-
-        <div align="left">
-            <div class="blue-textbox">
-              <ul class="kazyou1">
-                <li>羽根田賢和, 浦川通, 田口雄哉, 田森秀明, 坂口慶祐.<br> RLHFを用いた「面白い」短歌の自動生成の試み. <br>言語処理学会第30回年次大会(NLP2024)</li>
-              </ul>
-            </div>
-        </div>
-      
-      </div>
-
-
-      <div class="fadeLeftTrigger">
-        <div align="left">
-            <div class="pink-title-box">
-                <span class="pink-line"></span>
-                <span>&nbsp;Conference</span>
-            </div>
-        </div>
-
-        <div align="left">
-            <div class="pink-textbox">
-              <ul class="kazyou1">
-                <li>NLP2024</li>
-              </ul>
-            </div>
-        </div>
-
-      </div>
-
-
-      <div class="fadeRightTrigger">
-        <div align="right">
-          <div class="green-title-box">
-              
-              <span>&nbsp;Contact</span>
-              <span class="green-line"></span>
-          </div>
-        </div>
-
-        <div align="left">
-          <div class="green-textbox">
-              <ul class="kazyou1">
-                <li>e-mail : haneda.kento.t6@dc.tohoku.ac.jp</li>
-                <li>Twitter(新X) : @haneken_nlp <a href="https://twitter.com/haneken_nlp" class="image-button twix twix-rainbow"></a></li>
-                <li>GitHub : haneken <a href="https://github.com/haneken" class="image-button"><img src="images/github-mark.png" alt="GitHub", height="30px"></a></li>
-                
-              </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="for-sp">
-
-      <div class="fadeLeft">
-        <div align="left">
-            <div class="orange-title-box-sp">
-                <span class="orange-line-sp"></span>
-                <span>&nbsp;Profile</span>
-            </div>
-        </div>
-
-        <div align="left">
-            <div class="orange-textbox-sp">
-                <ul class="kazyou1">
-                    <li>名前 : 羽根田 賢和 (Kento Haneda)</li>
-                    <li>生年月日 : 2001/04/17</li>
-                    <li>所属 : 東北大学工学部電気情報物理工学科 坂口・乾・徳久研究室</li>
-                    <li>研究分野 : 自然言語処理学問</li>
-                    
-                </ul>
-            </div>
-        </div>
-      </div>
-
-
-      <div class="fadeRight">
-        <div align="right">
-            <div class="blue-title-box-sp">
-                
-                <span>&nbsp;Publications</span>
-                <span class="blue-line-sp"></span>
-            </div>
-        </div>
-
-        <div align="center">
-            <div class="blue-textbox-sp">
-              <ul class="kazyou1">
-                <li>羽根田賢和, 浦川通, 田口雄哉, 田森秀明, 坂口慶祐.<br> RLHFを用いた「面白い」短歌の自動生成の試み. <br>言語処理学会第30回年次大会(NLP2024)</li>
-                
-            </ul>
-            </div>
-        </div>
-      
-      </div>
-
-
-      <div class="fadeLeft">
-        <div align="left">
-            <div class="pink-title-box-sp">
-                <span class="pink-line-sp"></span>
-                <span>&nbsp;Conference</span>
-            </div>
-        </div>
-
-        <div align="center">
-            <div class="pink-textbox-sp">
-              <ul class="kazyou1">
-                <li>NLP2024</li>
-              </ul>
-            </div>
-        </div>
-
-      </div>
-
-
-      <div class="fadeRight">
-        <div align="right">
-          <div class="green-title-box-sp">
-              
-              <span>&nbsp;Contact</span>
-              <span class="green-line-sp"></span>
-          </div>
-        </div>
-
-        <div align="left">
-          <div class="green-textbox-sp">
-              <ul class="kazyou1">
-                <li>e-mail : haneda.kento.t6@dc.tohoku.ac.jp</li>
-                <li>Twitter(新X) : @haneken_nlp <a href="https://twitter.com/haneken_nlp" class="image-button twix-sp twix-rainbow"></a></li>
-                <li>GitHub : haneken <a href="https://github.com/haneken" class="image-button"><img src="images/github-mark.png" alt="GitHub", height="15px"></a></li>
-                
-              </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
- 
-    
-
+  <div class="content">
+    <ul>
+      <li>NLP2024</li>
+    </ul>
   </div>
+</section>
+
+
+<!-- Contact -->
+<section class="section-contact">
+  <h2 class="section-title">Contact</h2>
+
+  <div class="content">
+    <ul>
+      <li>
+        e-mail : haneda.kento.t6@dc.tohoku.ac.jp
+      </li>
+
+      <li>
+        Twitter(新X) : @haneken_nlp
+        <span class="social-links">
+          <a
+            href="https://twitter.com/haneken_nlp"
+            class="x-icon"
+            aria-label="X / Twitter"
+            target="_blank"
+            rel="noopener noreferrer"
+          ></a>
+        </span>
+      </li>
+
+      <li>
+        GitHub : haneken
+        <span class="social-links">
+          <a
+            href="https://github.com/haneken"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="images/github-mark.png"
+              alt="GitHub"
+              class="github-icon"
+            >
+          </a>
+        </span>
+      </li>
+    </ul>
   </div>
+</section>
+```
 
+  </main>
 
+  <!-- Footer -->
 
   <footer>
-    <p>&copy; 2024 Kento Haneda</p>
+    &copy; 2024 Kento Haneda
   </footer>
-
-
-
-
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="js/fade_anime.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="js/particle.js"></script>
-
 
 </body>
 </html>
-
